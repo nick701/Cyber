@@ -24,6 +24,6 @@ while True:
     clientsocket.close()
 
     # open a file with a random name and insert the decoded data into it
-    random_fd = open("".join(random.coices(ascii_lowercase), k=10), "w")
-    random_fd.write(base64.b64decode(encoded_data).decode("UTF-8"))
+    random_fd = open("".join(random.choices(ascii_lowercase, k=10)), "w")
+    random_fd.write(base64.b64decode(encoded_data).decode("latin-1"))
     random_fd.close()
