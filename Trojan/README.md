@@ -4,6 +4,10 @@
 
 A Trojan, also known as a Trojan horse or simply a "Trojan", is a type of malicious software that appears to perform a desirable function for the user prior to run or install, but instead facilitates unauthorized access to the user's computer system. Trojans can be used by attackers to gain remote access to a victim's computer, steal personal information, install additional malware or spyware, and perform other harmful actions without the user's knowledge or consent. Trojans often disguise themselves as harmless or even useful software, making them difficult to detect and remove.
 
+## Antivirus Evasion
+
+Trojans employ several techniques to evade detection by antivirus software, which typically analyzes viruses for code patterns and compares them to a preexisting list of signatures. Some of these techniques include encryption, compression, and the use of spaghetti code. For our purposes today, we will be dealing with a compressed malicious code.
+
 ## Contents
 
 - cc-server.py
