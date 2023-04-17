@@ -27,3 +27,5 @@ Upon completion this file must be zipped and it’s signature saved. The tricky 
 ## Putting it all together
 
 Run the command and control server followed the main file. You should see some data coming in.
+
+<http://localhost:1337/>
