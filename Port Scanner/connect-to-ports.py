@@ -12,8 +12,8 @@ for port in range(1, 65525):
     soc.setdefaulttimeout(1)
 
     # Return error
-    result = s.connect_ex((target, port))
-    if result == 0:
-        print("Port {} is open".format(port))
+    # ERROR HERE -> result = s.connect_ex((target, port))
+    # if result == 0:
+    #     print("Port {} is open".format(port))
 
-    s.close()
+    # s.close()
