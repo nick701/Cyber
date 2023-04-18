@@ -24,7 +24,8 @@ Hackers can use sockets to exploit vulnerabilities in network systems and gain u
 
 ## Components
 
-- connect-to-goog.py file:
+- connect-to-goog.py
+
     Creating a socket:
 
     To create a socket in Python for connection, two parameters are required: AF_INET and SOCK_STREAM.
@@ -36,3 +37,17 @@ Hackers can use sockets to exploit vulnerabilities in network systems and gain u
     1. Create a socket with the AI_INET and SOCK_STREAM arguments
     2. Get an IP address of a website that one intends to connect to
     3. Establish a connection using the .connect command
+
+    Context for this connection:
+
+    When you access Google directly through your web browser, your computer sends a request to the Google server's IP address using port 80, just like the socket in the Python code did. However, the difference is that your web browser sends an HTTP request, while the Python code simply establishes a TCP connection to the server.
+
+    In other words, a socket provides a way for programs to establish a connection and exchange data over a network. It is an essential component of many networked applications, including web browsers, email clients, and instant messaging programs.
+
+- connect-to-ports.py
+
+    Connecting to ports:
+
+    To check if a port is open, we connect to the port and check its status code. A status code of 0 means the port is open, while a status code of 1 indicates a connection failure.
+
+    The code checkes through all 65,535 ports examining the status of all ports and printing which ones are open in the command line.
