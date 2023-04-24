@@ -1,7 +1,7 @@
 import socket
 
 # Get our local IP and a specified port
-HOST = "127.0.0.1"  # '192.168.42.82'
+HOST = "192.168.73.224"  # '192.168.42.82'
 PORT = 8081  # 2222
 
 new_port = input("Input host port (blank if defauly):")
