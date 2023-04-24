@@ -23,3 +23,12 @@ Reverse shells have a client component and a server component. Clients run on th
     2. Bind the IP and port to create a socket
     3. Start listening
     4. Send and receive commands in an infinite loop
+
+    This file is meant to be run on the remote system (ie. target). 
+
+- server.py
+
+    This file allows us to use the host system to run commands on the remote. 
+
+
+It is important to note that the HOST and REMOTE_HOST on the server.py and back.py files respectively have to be the same and equal to the host system's IP (ie. the system running server.py). The PORT and REMOTE_PORT also have to be the same.
