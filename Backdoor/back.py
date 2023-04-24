@@ -4,6 +4,8 @@ import subprocess
 
 # Setting Up IP/Sockets
 REMOTE_HOST = "127.0.0.1"
+# -> should be equal to HOST in back.py
+# also should be the IP of the host (not client)
 REMOTE_PORT = 8081  # 2222
 client = socket.socket()
 

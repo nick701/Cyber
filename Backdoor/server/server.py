@@ -2,6 +2,8 @@ import socket
 
 # Creating Listening Port
 HOST = "127.0.0.1"  # '192.168.43.82'
+# -> should be equal to HOST in back.py 
+# also should be the IP of the host (not client)
 PORT = 8081  # 2222
 
 new_port = input("Input Host Port (Blank if default).")
